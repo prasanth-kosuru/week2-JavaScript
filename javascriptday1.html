@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Javascript</title>
+    <style>
+      table,
+      th,
+      td {
+        border-collapse: collapse;
+        width: 50%;
+        border: 2px solid black;
+        text-align: left;
+      }
+th,td{
+padding:25x;
+}
+    </style>
+  </head>
+  <body>
+
+   
+   
+    <hr>
+    <table id="id1" border="1">
+      <tr>
+        <th>Subjects</th>
+        <th>Marks</th>
+      </tr>
+      <tr>
+        <td>Machine Learning</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>JavaScript</td>
+        <td>70</td>
+      </tr>
+      <tr>
+        <td>Django</td>
+        <td>75</td>
+      </tr>
+    </table>
+    <h4 id="total"></h4>
+  
+    <hr>
+    <table id="id2" border="1">
+        <tr>
+          <th>Subjects</th>
+          <th>Marks</th>
+        </tr>
+        <tr>
+          <td>Machine Learning</td>
+          <td>87</td>
+        </tr>
+        <tr>
+          <td>JavaScript</td>
+          <td>98</td>
+        </tr>
+        <tr>
+          <td>Django</td>
+          <td>65</td>
+        </tr>
+        <td>python</td>
+        <td>77</td>
+      </tr>
+      </table>
+      <h4 id="total1"></h4>
+      <h4 id="average"></h4>
+    
+   
+<hr>
+<h4>Multiply </h4>
+First No :<input id="box1" type="text" oninput="calculate();" />
+<br><br>
+Second No:<input id="box2" type="text" oninput="calculate();" /><br><br>
+Answer :
+<input id="result" readonly/>
+<hr>
+Name :<input type='text' name='text1' id="text1"/>
+<input type="submit" name="submit" value="RESULT" onclick="letter()" />
+<hr> <h4>a = [1, 2, 3, 4, 5];</h4>
+
+
+    <script>
+      function script(){
+document.write("<h3> JavaScript is a programming language used primarily by Web browsers to create a dynamic and interactive experience for the user. Most of the functions and applications that make the Internet indispensable to modern life are coded in some form of JavaScript.</h3>");
+}
+         
+
+
+            var x = "Prasanth Kosuru";
+            var y = "BTECH";
+            console.log("Hello I am " + x + " and   I am studying " + y +"at NBKRIST");
+
+
+            <!--array-->
+            a = [1, 2, 3, 4, 5];
+
+            document.write(
+              "<h3>Element at index 3 is converted to  " +
+                typeof a[2].toString() +
+                "</h3> "
+            );
+
+            <!--table-->
+
+      var table = document.getElementById("id1"),
+        sumVal = 0;
+            c=0
+      for (var i = 1; i < table.rows.length; i++) {
+          c=c+1
+        sum = sum + parseInt(table.rows[i].cells[1].innerHTML);
+      }
+
+      document.getElementById("total").innerHTML = "Total Marks = " + sum;
+    
+    
+      <!--table1-->
+
+var table = document.getElementById("table1"),
+  sum = 0;
+      count=0
+for (var i = 1; i < table.rows.length; i++) {
+    count=count+1
+  sum = sum + parseInt(table.rows[i].cells[1].innerHTML);
+}
+
+document.getElementById("total1").innerHTML = "Total Marks = " + sum;
+
+document.getElementById("average").innerHTML = "Average Marks = " + sum/count;
+
+
+
+<!-- Multiplication-->
+function calculate() {
+    var myBox1 = document.getElementById('box1').value; 
+
+        var myBox2 = document.getElementById('box2').value;
+        var result = document.getElementById('result'); 
+        var myResult = myBox1 * myBox2;
+          document.getElementById('result').value = myResult;
+}
+
+
+<!--Checking whether the input consists of only alphabest or not-->
+
+function letter()
+      { 
+        var inputtxt = document.getElementById('text1').value;
+        var letters = /^[A-Za-z]+$/;
+      if(inputtxt.match(letters))
+      {
+      alert('what you have entered is absolutely correct :');
+      
+      }
+      else
+      {
+      alert('Please reenter (only alphabets are allowed)'); 
+      }}
+
+
+      <!--math operations-->
+
+      function pow(){
+        var num = parseInt(document.getElementById('num').value);
+        var pow = parseInt(document.getElementById('power').value);
+      r=Math.pow(num,pow)
+      document.write ( "<h4>power("+num+" , "+pow+") =" +r+"</h4>");
+    return true;
+      }
+
+
+      function sqrt(){
+        var num = parseInt(document.getElementById('num1').value);
+      r=Math.sqrt(num)
+      document.write ( "<h4>sqrt("+num+") =" +r+"</h4>");
+    return true;
+      }
+      
+      function abs(){
+        var num = parseInt(document.getElementById('num2').value);
+      r=Math.abs(num)
+      document.write ( "<h4>abs("+num+") =" +r+"</h4>");
+    return true;
+      }
+
+
+       
+      function rand(){
+        var rand=Math.random();
+
+      document.write ( "<h4>random number := " +rand+"</h4>");
+      document.write ( "<h4>multiply by 100 := " +(rand*100)+" </h4>");
+      document.write ( "<h4>Floor value := " +Math.floor(rand*100)+" </h4>");
+      document.write ( "<h4>Ceil value:= " +Math.ceil(rand*100)+" </h4>");
+      document.write ( "<h4>Cos() value := " +Math.cos(rand*100)+" </h4>");
+      document.write ( "<h4>Sin() value:= " +Math.sin(rand*100)+" </h4>");
+    return true;
+      }
+
+    </script>
+    <hr>
+    <h3><u>Math operations</u></h3>
+    
+    <h4>power of numbers</h4>
+
+    Enter Number :<input type="text" id="num"/>&nbsp;&nbsp;
+    Enter Power :<input type="text" id="power"/>&nbsp;
+
+<input type="submit" name="submit" value="RESULT" onclick="pow()" />
+<h4>square root of number</h4>
+
+Enter Number :<input type="text" id="num1"/>&nbsp;&nbsp;
+<input type="submit" name="submit" value="RESULT" onclick="sqrt()" />
+<h4>Absolute Number</h4>
+
+Enter Number :<input type="text" id="num2"/>&nbsp;&nbsp;
+<input type="submit" name="submit" value="RESULT" onclick="abs()" />
+
+<h4>random Number</h4>
+<input type="submit" name="submit" value="Click here to see the results of different math functions" onclick="rand()" />
+
+
+<input type ="button" value ="CLICK HERE TO KNOW MORE ABOUT JAVASCRIPT" onclick="script"/>
+  </body>
+</html>
